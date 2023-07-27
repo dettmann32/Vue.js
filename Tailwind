@@ -21,4 +21,4 @@ import './assets/global.css'
 
 para iniciar 
 
-npm run deve
+npm run serve
