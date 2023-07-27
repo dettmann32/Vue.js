@@ -1,0 +1,24 @@
+npm install -D tailwindcss autoprefixer 
+npx tailwind init -p
+
+ content: [
+  "./index.html",
+  "./src/**/*.{vue,js,ts,jsx,tsx}"]
+
+
+é nescessario criar um arquivo css em assents chamado global.css, as seguintes regras devem estar nele:
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+tambem é nescessario inserir um comando no main.js:
+
+import './assets/global.css'
+
+
+
+para iniciar 
+
+npm run deve

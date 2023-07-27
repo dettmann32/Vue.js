@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.box1{
+    @apply bg-gray-300 p-10 m-auto mt-7 w-52 h-52 gap-3
+}
