@@ -3,7 +3,7 @@ npx tailwind init -p
 
  content: [
   "./index.html",
-  "./src/**/*.{vue,js,ts,jsx,tsx}"]
+  "./src/**/*.{vue,js,ts,jsx,tsx}"],
 
 
 é nescessario criar um arquivo css em assents chamado global.css, as seguintes regras devem estar nele:
