@@ -3,6 +3,10 @@
         <h1>Email</h1>
         <p v-if="mostrar_email">{{ email }}</p>
         <button @click="showEmail">{{ mostrar }}</button>
+        <form action="" @submit="enviar($event)">
+        <input type="text">
+        <button>Enviar</button>
+        </form>
     </header>
 </template>
 
