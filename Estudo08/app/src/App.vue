@@ -1,6 +1,7 @@
 <template>
   <div>
-    <TheHeader></TheHeader>
+    <TheHeader pemail='Lucas@gmail.com' @mudar-texto="trocartexto"></TheHeader>
+  
   </div>
 </template>
 
@@ -10,11 +11,18 @@ export default {
   components:{
     TheHeader,
   },
-  setup () {
+  date () {
       return {
-        
+       pemail : ['Lucas@gmail.com'],
       }
-  }
+      
+  },
+  methods:{
+  trocartexto(){
+            this.eemail = 'LucasDettmann@gmail.com'
+        }
+      }
+
 }
 </script>
 
