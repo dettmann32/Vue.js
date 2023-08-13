@@ -1,5 +1,5 @@
 <template>
-  <TeSte></TeSte>
+  <TeSte variant="variant">qualquer coisa</TeSte>
   <router-view/>
 </template>
 <script>
@@ -8,7 +8,11 @@ import TeSte from './components/TeSte.vue';
 
   components:{
     TeSte
-  }
+  },
+  data(){
+   variant:'anything'
+  },
+  
 }
 </script>
 <style>
