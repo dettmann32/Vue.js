@@ -8,7 +8,7 @@
         @keyup.enter="on()" class="border">
         <button @click="click">btn</button>
        </form>
-       {{ variant }}
+       {{ prop }}
        <p v-if="data">{{ name }} </p>
        <slot></slot>
        <p v-if="data" v-for="us in users" :key="us.id">nome: {{ us.user }} <br> idade: {{ us.age }}</p>
@@ -44,9 +44,8 @@ export default {
                     
         }
     },
-    props:[
-        'variant'
-],
+    
+
     methods:{
         on(){
             console.log(this.name)
@@ -58,6 +57,9 @@ export default {
        
       
     },
+    props:['prop']
+
+    
 
     // Chama a função name1() aqui
    
