@@ -1,7 +1,9 @@
 <template>
   <TeSte prop="variant">qualquer coisa</TeSte>
-  <BaseAlert v-if="ShowAlert" @close="onclose()"></BaseAlert>
+  <BaseAlert v-if="$store.state.ShowAlert"></BaseAlert>
   <router-link to="/PreSunto">presunto</router-link>
+ {{ $store.state.user.name }}
+
   <router-view/>
 </template>
 <script>
@@ -13,12 +15,23 @@ import BaseAlert from './components/BaseAlert.vue';
     TeSte, BaseAlert
   },
   data(){
-    ShowAlert:true
+    return{
+     
+    }
   },
   methods:{
     onclose(){
       this.show = !this.show
     }
+  },
+  created(){
+    const newUser =  {
+      name:'pedro',
+      age: '19',
+      job: 'repositor',
+      id:1
+    }
+    this.$store.commit('ShowUser', newUser)
   }
   
 }

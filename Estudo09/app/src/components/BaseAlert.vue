@@ -15,8 +15,7 @@
         },
         methods:{
             onClick(){
-                this.$emit('close')
-                console.log('clicou')
+                this.$store.commit("alert", false )
             }
         }
     }
