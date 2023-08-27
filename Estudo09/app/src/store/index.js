@@ -11,7 +11,9 @@ export default createStore({
     user2:{
 
     },
-  ShowAlert: true
+  ShowAlert: true,
+  ShowAlert2:true
+
   },
   getters: {
   },
@@ -25,6 +27,10 @@ export default createStore({
     },
     alert(state, show){
       state.ShowAlert = show 
+    },
+    alert2(state, show3){
+      console.log('deu certo')
+      state.ShowAlert2 = show3
     }
   },
   actions: {

@@ -4,15 +4,19 @@
   <router-link to="/PreSunto">presunto</router-link>
  {{ $store.state.user.name }}
 
+  <BaseAlert2></BaseAlert2>
+
   <router-view/>
+
 </template>
 <script>
 import TeSte from './components/TeSte.vue';
 import BaseAlert from './components/BaseAlert.vue';
+import BaseAlert2 from './components/BaseAlert2.vue';
  export default{
 
   components:{
-    TeSte, BaseAlert
+    TeSte, BaseAlert, BaseAlert2
   },
   data(){
     return{
@@ -20,9 +24,7 @@ import BaseAlert from './components/BaseAlert.vue';
     }
   },
   methods:{
-    onclose(){
-      this.show = !this.show
-    }
+   
   },
   created(){
     const newUser =  {
