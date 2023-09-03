@@ -6,13 +6,18 @@
        </div>
        </section>
        <section>
-
+        <div class="flex justify-center">
+            
+            <BurgerForm></BurgerForm>
+        </div>
        </section>
     </main>
 </template>
 <script>
-
+import BurgerForm from '@/components/BurgerForm.vue';
 export default{
-
+ components:{
+    BurgerForm
+ }
 }
 </script>
