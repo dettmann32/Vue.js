@@ -1,0 +1,33 @@
+{
+    "ingredientes":{
+    "paes":[
+        {
+            "id":1,
+            "tipo":"Italiano Branco"
+        },
+        {
+            "id":2,
+            "tipo":"3 Queijos"
+        },
+        {
+            "id":3,
+            "tipo":"Integral"
+        }
+    ],
+    "carnes":[
+        {
+            "id":1,
+            "tipo":"Bife de Boi"
+        },
+        {
+            "id":2,
+            "tipo":"Bife de Frango"
+        },
+        {
+            "id":3,
+            "tipo":"X-Bacon"
+        }
+    ]
+}
+
+}
