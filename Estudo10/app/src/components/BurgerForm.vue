@@ -5,16 +5,16 @@
             <h2>Pão</h2>
         </div>
         <div>
-            <select name="Pão" id="" class="w-[40vw] text-center  border-solid border-black border-2">
-                <option v-for="pao in paes" :key="pao.id" value="paor">{{ pao.tipo }}</option>
+            <select name="Pão" id="" class="w-[40vw] text-center  border-solid border-black border-2" v-model="selpao">
+                <option v-for="pao in paes" :key="pao.id" >{{ pao.tipo }}</option>
             </select>
         </div>
         <div class="my-5 text-4xl border-l-4 border-l-yellow-300 pl-3">
             <h2>Carnes</h2>
         </div>
         <div>
-            <select name="Carnes" id="" class="w-[40vw] text-center  border-solid border-black border-2">
-                <option v-for="carne in carnes" :key="carne.id" value="carner">{{ carne.tipo }}</option>
+            <select name="Carnes" id="" class="w-[40vw] text-center  border-solid border-black border-2" v-model="selcarne">
+                <option v-for="carne in carnes" :key="carne.id">{{ carne.tipo }}</option>
             </select>
         </div>
         <div>
@@ -34,6 +34,8 @@ export default{
         return{
             paes:null,
             carnes:null,
+            selpao:'',
+            selcarne:""
         }
     },
     methods:{
@@ -45,16 +47,33 @@ export default{
             
 
         },
-        async createdBurger(e){
-            e.preventDefault()
-            const data : {
-                
+        async createdBurger(){
+            const data = {
+                pao : this.selpao,
+                carne : this.selcarne
             }
 
+            const dataJson = JSON.stringify(data)
+
+            const req = await fetch("http://localhost:3000/ingredientes/burger",{
+                method:"POST",
+                headers:{"Content-Type":"application/json"},
+                body: dataJson
+            })
+
+            const res = await req.json()
+
+            this.selcarne = ''
+            this.selpao = ''
+
         }
+        
+
+        
     },
     mounted(){
         this.getElementes()
+        
     }
         
 
