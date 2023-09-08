@@ -17,6 +17,4 @@ import FooTer from './components/FooTer.vue'
 }
 
 </script>
-<style >
 
-</style>

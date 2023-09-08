@@ -1,5 +1,5 @@
 <template>
-    <header class="flex items-center justify-between bg-gray-600 h-16 p-5">
+    <header class="flex items-center justify-between bg-gray-800 h-16 p-5">
     <div>
         <img src="../assets/img/globo-terrestre-com-mapas-de-continentes.png" alt="globo terrestre" class="h-12 w-12">
     </div>
@@ -15,10 +15,10 @@
          <nav>
         <ul class="md:flex gap-5 text-center">
             <div>
-                <router-link to="/Home">Home</router-link>
+                <router-link to="/Home" class="text-yellow-300">Home</router-link>
             </div>
             <div>
-                <router-link to="SobreView">Sobre</router-link>
+                <router-link to="SobreView" class="text-yellow-300">Sobre</router-link>
             </div>
         </ul>
     </nav> 
