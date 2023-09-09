@@ -1,6 +1,6 @@
 <template>
-    <main class="h-[67.67vh]">
-        <section class="flex justify-center">
+    <main >
+        <section class="flex justify-center mb-20">
             <div>
                 <div class="text-center">
                     <h1 class="text-center mb-12 mt-10 text-5xl">Pedidos</h1>
@@ -19,12 +19,9 @@
                         </ul>
                     </div>
                     <div class="flex items-center gap-5">
-                        <button class="bg-gray-300 p-5">
-                            Finalizado
-                        </button>
-                        <button>
-                            Cancela
-                        </button>
+                        <button class="bg-gray-300 p-5" @click="finalizar(c.id)">
+                            Finalizar
+                        </button>                       
                     </div>
                 </div>
 
@@ -51,8 +48,15 @@ export default{
             const data = await req.json()
             this.burger = data
             
+        },
+        async finalizar(id){
+            const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+                method: 'DELETE'
+            })
+            const res = req.json()
+
+            this.getElements()
         }
-    
 },
     mounted(){
             this.getElements()

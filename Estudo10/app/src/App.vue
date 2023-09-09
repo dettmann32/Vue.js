@@ -1,7 +1,7 @@
 <template>
   <NavBar ></NavBar>
   <router-view/>
-  <FooTer></FooTer>  
+  <FooTer class="absolute w-[98.6vw] "></FooTer>  
 </template>
 
 <script>
