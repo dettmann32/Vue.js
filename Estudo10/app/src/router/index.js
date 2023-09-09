@@ -1,22 +1,24 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
+import SobreView from '../views/SobreView.vue'
+import HomeView from '../views/HomeView.vue'
 
 const routes = [
   {
     path : '/home',
     name : 'home',
-    component: () => import('../views/HomeView.vue')
+    component:HomeView
   },
   {
     path : '/sobre',
     name : 'sobre',
-    component: () => import('../views/SobreView.vue')
+    component:SobreView
   }
 ]
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes:routes
 })
 
 export default router

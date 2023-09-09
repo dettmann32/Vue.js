@@ -1,7 +1,7 @@
 <template>
     <div class="mt-10 flex justify-center flex-col h-[400px]">
-        <h1 class="text-center mb-20 mt-5 text-5xl">Faça seu pedido aqui </h1>
-        <div class="absolute top-[500px] right-0 bg-gray-200 p-5 rounded-l-md" v-if="mensage">
+        <h1 class="text-center mb-12 mt-10 text-5xl">Faça seu pedido aqui </h1>
+        <div class="fixed top-[95px] right-0 bg-gray-200 p-5 rounded-l-md shadow-xl" v-if="mensage">
             <div class="flex gap-5 items-center text-lg">
                 <button class="border-gray-400 border rounded-[100%] py-3 px-5" @click="mensagem">
                     X
@@ -10,6 +10,22 @@
                
             </div>
         </div>
+        <div class="fixed top-[95px] right-0 bg-red-600 p-5 rounded-l-md shadow-xl" v-if="mensage_erro">
+            <div class="flex gap-5 items-center text-lg">
+                <button class="border-red-400 border rounded-[100%] py-3 px-5" @click="mensagem_erro">
+                    X
+                </button>
+                <p>Preencha todos os campos obrigatórios</p>
+               
+            </div>
+        </div>
+        <div class="my-5 text-4xl border-l-4 border-l-yellow-300 pl-3 ml-10">
+            <h2>Nome</h2>
+        </div>
+        <div class="flex justify-center">
+            <input type="text" name="name" id="" class="w-[40vw] text-center  border-solid border-black border-2" v-model="selname">
+        </div>
+
         <div class="my-5 text-4xl border-l-4 border-l-yellow-300 pl-3 ml-10">
             <h2>Pão</h2>
         </div>
@@ -43,9 +59,11 @@ export default{
         return{
             paes:null,
             carnes:null,
-            selpao:'',
-            selcarne:"",
-            mensage: false
+            selpao:null,
+            selcarne:null,
+            mensage: false,
+            selname: null,
+            mensage_erro:false
         }
     },
     methods:{
@@ -58,9 +76,11 @@ export default{
 
         },
         async createdBurger(){
+           if (this.selpao && this.selcarne && this.selname != null){
             const data = {
                 pao : this.selpao,
-                carne : this.selcarne
+                carne : this.selcarne,
+                name: this.selname
             }
 
             const dataJson = JSON.stringify(data)
@@ -70,17 +90,21 @@ export default{
                 headers:{"Content-Type":"application/json"},
                 body: dataJson
             })
-
+            this.mensage = true
+        }else{this.mensage_erro = true}
            this.selpao = '',
-           this.selcarne = ''
+           this.selcarne = '',
+           this.selname = ''
 
-           this.mensage = true
+           
 
         },
         mensagem(){
             this.mensage = !this.mensage
-        }
-        
+        },
+         mensagem_erro(){
+            this.mensage_erro = !this.mensage_erro
+    }
 
         
     },
@@ -88,6 +112,7 @@ export default{
         this.getElementes()
         
     }
+   
         
 
 
