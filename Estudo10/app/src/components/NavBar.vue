@@ -18,7 +18,7 @@
                 <router-link to="/Home" class="text-yellow-300">Home</router-link>
             </div>
             <div>
-                <router-link to="SobreView" class="text-yellow-300">Sobre</router-link>
+                <router-link to="/SobreView" class="text-yellow-300">Sobre</router-link>
             </div>
         </ul>
     </nav> 
