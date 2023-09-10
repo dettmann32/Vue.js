@@ -92,6 +92,7 @@ export default{
             })
             this.mensage = true
         }else{this.mensage_erro = true}
+
            this.selpao = '',
            this.selcarne = '',
            this.selname = ''
