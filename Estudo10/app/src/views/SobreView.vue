@@ -1,25 +1,29 @@
 <template>
-    <main class="h-[85vh]">
-        <section class="flex justify-center mb-20">
+    <main class="h-[69vh]">
+        <section class="flex justify-center">
             <div>
                 <div class="text-center">
-                    <h1 class="text-center mb-12 mt-10 text-5xl">Gerenciador de Pedidos</h1>
+                    <h1 class="text-center mb-12 mt-10 text-2xl md:text-5xl">Gerenciador de Pedidos</h1>
                 </div>
-                <div class="flex border-gray-400 border-2 p-8 gap-4" v-for="c in burger" :key="c.id">
-                    <div>
-                        <ul class="flex items-center justify-center gap-36 text-center border-b-2 border-gray-800 mb-5">
-                            <div class="text-3xl">Nome:</div>
-                            <div class="text-3xl">Pão:</div>
-                            <div class="text-3xl">Carnes:</div>
+                <div class="flex justify-center border-gray-400 border-2 p-8 gap-16 rounded-sm" v-for="c in burger" :key="c.id">
+                    <div class="flex md:block justify-center">
+                        <ul class="md:flex flex-col md:flex-row items-center justify-center gap-[20%] text-center md:border-b-2 border-gray-800 shadow-sm mb-5 hidden">
+                            
+                            <div class="text-xl md:text-3xl">Nome:</div>
+                            <div class="text-xl md:text-3xl">Pão:</div>
+                            <div class="text-xl md:text-3xl">Carnes:</div>
+
                         </ul>
-                        <ul class="flex justify-center gap-32 text-center">
+                        <ul class="flex flex-col justify-center md:flex-row md:gap-32 text-center">
+                           
                             <div>{{ c.name }}</div>
                             <div>{{c.pao}}</div>
                             <div>{{ c.carne }}</div>
+
                         </ul>
                     </div>
                     <div class="flex items-center gap-5">
-                        <button class="bg-gray-300 p-5" @click="finalizar(c.id)">
+                        <button class="bg-gray-200 shadow-lg hover:bg-gray-400 p-5 rounded-md" @click="finalizar(c.id)">
                             Finalizar
                         </button>                       
                     </div>

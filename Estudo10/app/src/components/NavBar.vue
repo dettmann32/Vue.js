@@ -18,7 +18,7 @@
                 <router-link to="/" class="text-yellow-300">Home</router-link>
             </div>
             <div>
-                <router-link to="/Sobre" class="text-yellow-300">Sobre</router-link>
+                <router-link to="/Sobre" class="text-yellow-300">Pedidos</router-link>
             </div>
         </ul>
     </nav> 
