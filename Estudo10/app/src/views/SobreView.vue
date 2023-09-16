@@ -1,9 +1,9 @@
 <template>
-    <main >
+    <main class="h-[85vh]">
         <section class="flex justify-center mb-20">
             <div>
                 <div class="text-center">
-                    <h1 class="text-center mb-12 mt-10 text-5xl">Pedidos</h1>
+                    <h1 class="text-center mb-12 mt-10 text-5xl">Gerenciador de Pedidos</h1>
                 </div>
                 <div class="flex border-gray-400 border-2 p-8 gap-4" v-for="c in burger" :key="c.id">
                     <div>

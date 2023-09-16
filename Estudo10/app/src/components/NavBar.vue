@@ -15,7 +15,7 @@
          <nav>
         <ul class="md:flex gap-5 text-center">
             <div>
-                <router-link to="/Home" class="text-yellow-300">Home</router-link>
+                <router-link to="/" class="text-yellow-300">Home</router-link>
             </div>
             <div>
                 <router-link to="/Sobre" class="text-yellow-300">Sobre</router-link>
