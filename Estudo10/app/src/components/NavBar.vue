@@ -1,7 +1,7 @@
 <template>
     <header class="flex items-center justify-between bg-gray-800 h-16 p-5">
     <div>
-        <img src="../assets/img/globo-terrestre-com-mapas-de-continentes.png" alt="globo terrestre" class="h-12 w-12">
+        <img src="../assets/img/hamburguer.png" alt="hamburguer" class="h-12 w-12">
     </div>
     <div>
         <button @click="openMenu" class="md:hidden">
@@ -18,7 +18,7 @@
                 <router-link to="/" class="text-yellow-300">Home</router-link>
             </div>
             <div>
-                <router-link to="/Sobre" class="text-yellow-300">Sobre</router-link>
+                <router-link to="/Pedidos" class="text-yellow-300">Pedidos</router-link>
             </div>
         </ul>
     </nav> 

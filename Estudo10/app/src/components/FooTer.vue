@@ -1,7 +1,8 @@
 <template>
     <footer class="text-center bg-gray-900 text-yellow-300 w-full mt-40">
-        <p>@lucasdettmann</p>
+        <a target="_blank" rel="external" href="https://github.com/dettmann32" >@lucasdettmann</a>
     </footer>
+    
 </template>
 
 <script>

@@ -1,6 +1,6 @@
 <template>
     <div class="mt-10 flex justify-center flex-col h-[400px]">
-        <h1 class="text-center mb-12 mt-10 text-5xl">Faça seu pedido aqui </h1>
+        <h1 class="text-center mb-10 mt-32 text-5xl">Faça seu pedido aqui </h1>
         <div class="fixed top-[95px] right-0 bg-gray-200 p-5 rounded-l-md shadow-xl" v-if="mensage">
             <div class="flex gap-5 items-center text-lg">
                 <button class="border-gray-400 border rounded-[100%] py-3 px-5" @click="mensagem">
@@ -23,14 +23,14 @@
             <h2>Nome</h2>
         </div>
         <div class="flex justify-center">
-            <input type="text" name="name" id="" class="w-[40vw] text-center  border-solid border-black border-2" v-model="selname">
+            <input type="text" name="name" id="" class="w-[40vw] text-center  border-solid border-black border-2 md:py-2" v-model="selname">
         </div>
 
         <div class="my-5 text-4xl border-l-4 border-l-yellow-300 pl-3 ml-10">
             <h2>Pão</h2>
         </div>
         <div class="flex justify-center">
-            <select name="Pão" id="" class="w-[40vw] text-center  border-solid border-black border-2" v-model="selpao">
+            <select name="Pão" id="" class="w-[40vw] text-center  border-solid border-black border-2 md:py-2" v-model="selpao">
                 <option v-for="pao in paes" :key="pao.id" >{{ pao.tipo }}</option>
             </select>
         </div>
@@ -38,7 +38,7 @@
             <h2>Carnes</h2>
         </div>
         <div class="flex justify-center">
-            <select name="Carnes" id="" class="w-[40vw] text-center  border-solid border-black border-2" v-model="selcarne">
+            <select name="Carnes" id="" class="w-[40vw] text-center  border-solid border-black border-2 md:py-2" v-model="selcarne">
                 <option v-for="carne in carnes" :key="carne.id" >{{ carne.tipo }}</option>
             </select>
         </div>
