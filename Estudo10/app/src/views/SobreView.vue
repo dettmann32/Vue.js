@@ -5,7 +5,7 @@
                 <div class="text-center">
                     <h1 class="text-center mb-12 mt-10 text-5xl">Gerenciador de Pedidos</h1>
                 </div>
-                <div class="flex border-gray-400 border-2 p-8 gap-4" v-for="c in burger" :key="c.id">
+                <div class="flex border-gray-400 border-2 p-8 gap-4" v-for="c in burger" :key="c.id" v-show="burger != null">
                     <div>
                         <ul class="flex items-center justify-center gap-36 text-center border-b-2 border-gray-800 mb-5">
                             <div class="text-3xl">Nome:</div>
@@ -19,7 +19,7 @@
                         </ul>
                     </div>
                     <div class="flex items-center gap-5">
-                        <button class="bg-gray-300 p-5" @click="finalizar(c.id)">
+                        <button class="bg-gray-300 p-5 focus:bg-green-100" @click="finalizar(c.id)">
                             Finalizar
                         </button>                       
                     </div>
@@ -56,6 +56,7 @@ export default{
             const res = req.json()
 
             this.getElements()
+            
         }
 },
     mounted(){

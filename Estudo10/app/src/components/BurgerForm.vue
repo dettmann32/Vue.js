@@ -52,6 +52,7 @@
 
 <script>
 
+const axios = require('axios')
 export default{
     name: 'BurgerForm',
 
@@ -67,12 +68,16 @@ export default{
         }
     },
     methods:{
+        
+
         async getElementes(){
-            const req = await fetch("http://localhost:3000/ingredientes")
-            const data = await req.json()
-            this.paes = data.paes
-            this.carnes = data.carnes
+            const paes = await axios.get("http://localhost:3000/paes")
+            this.paes = paes.data
+
+            const carnes = await axios.get("http://localhost:3000/carnes")
+            this.carnes = carnes.data
             
+           
 
         },
         async createdBurger(){
@@ -110,7 +115,7 @@ export default{
         
     },
     mounted(){
-        this.getElementes()
+         this.getElementes()
         
     }
    
