@@ -1,18 +1,24 @@
 <template>
     <div class="mt-10 flex justify-center flex-col h-[400px]">
         <h1 class="text-center mb-10 mt-32 text-5xl">Faça seu pedido aqui </h1>
-        <div class="fixed top-[95px] right-0 bg-gray-200 p-5 rounded-l-md shadow-xl" v-if="$store.state.mensage">
+        <div class="fixed top-[95px] right-0 bg-gray-200 p-5 rounded-l-md shadow-xl" v-if="mensage">
             <div class="flex gap-5 items-center text-lg">
-                <button class="border-gray-400 border rounded-[100%] py-3 px-5" @click="mensagem()">
+                <button class="border-gray-400 border rounded-[100%] py-3 px-5" @click="mensagem">
                     X
                 </button>
                 <p>Pedido realizado com sucesso</p>
                
             </div>
         </div>
-
-        <MensageOk></MensageOk>
-
+        <div class="fixed top-[95px] right-0 bg-red-600 p-5 rounded-l-md shadow-xl" v-if="mensage_erro">
+            <div class="flex gap-5 items-center text-lg">
+                <button class="border-red-400 border rounded-[100%] py-3 px-5" @click="mensagem_erro">
+                    X
+                </button>
+                <p>Preencha todos os campos obrigatórios</p>
+               
+            </div>
+        </div>
         <div class="my-5 text-4xl border-l-4 border-l-yellow-300 pl-3 ml-10">
             <h2>Nome</h2>
         </div>
@@ -47,7 +53,6 @@
 <script>
 
 const axios = require('axios')
-import MensageOk from './MensageOk.vue'
 export default{
     name: 'BurgerForm',
 
@@ -57,7 +62,7 @@ export default{
             carnes:null,
             selpao:null,
             selcarne:null,
-            mensage: true,
+            mensage: false,
             selname: null,
             mensage_erro:false
         }
@@ -90,9 +95,7 @@ export default{
                 headers:{"Content-Type":"application/json"},
                 body: dataJson
             })
-
-            this.$store.commit('mensagem',this.mensage)
-
+            this.mensage = true
         }else{this.mensage_erro = true}
 
            this.selpao = '',
@@ -102,7 +105,9 @@ export default{
            
 
         },
-       
+        mensagem(){
+            this.mensage = !this.mensage
+        },
          mensagem_erro(){
             this.mensage_erro = !this.mensage_erro
     }

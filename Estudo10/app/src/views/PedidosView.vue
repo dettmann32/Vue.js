@@ -16,15 +16,15 @@
             <div class="mx-[15vw] md:m-0">
                 <td class="hidden md:flex items-center justify-center gap-36 text-center  mb-5">
                     <tr>
-                        <span class="md:text-3xl md:mx-10">Nome:</span>
-                        <span class="md:text-3xl md:mx-10">Pão:</span>
-                        <span class="md:text-3xl md:mx-10">Carnes:</span>
+                        <span class="md:text-3xl md:mx-10 w-15">Nome:</span>
+                        <span class="md:text-3xl md:mx-10 md:w-12">Pão:</span>
+                        <span class="md:text-3xl md:mx-10 w-15">Carnes:</span>
                     </tr>
                 </td>
-                <td class="flex flex-col md:flex-row justify-center text-left">
-                    <span class="md:mx-10">{{ c.name }}</span>
-                    <span class="md:mx-10">{{c.pao}} </span>
-                    <span class="md:mx-10">{{ c.carne }}</span>
+                <td class="flex flex-col md:flex-row justify-center text-center gap-3">
+                    <span class="md:mx-10 w-15">{{ c.name }}</span>
+                    <span class="md:mx-10 md:w-12">{{c.pao}} </span>
+                    <span class="md:mx-10 w-15">{{ c.carne }}</span>
                 </td>
             </div>
             
