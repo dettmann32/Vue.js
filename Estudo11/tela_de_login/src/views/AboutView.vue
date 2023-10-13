@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center">
     <div class="container">
-      <form class="form" @submit.prevent="created()">
+      <form class="form" @submit.prevent="created()" name="form">
 
         <label for="name">Nome</label>
         <input v-model="user" type="text" />
@@ -54,7 +54,7 @@ export default {
      this.email = null
      this.password = null
 
-     this.$refs.myForm.reset();
+     this.$refs.form.reset();
 
 
 

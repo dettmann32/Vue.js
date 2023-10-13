@@ -47,13 +47,19 @@ export default {
       user:this.user,
       email:this.email,
       password:this.password
-     }).then()
+     }).then(response =>{
+      
+      console.log(response.data)
+      return response
+     }).then(finalResponse =>{
+      console.log(finalResponse.data)
+     }).catch(console.log("deu ruim"))
 
      this.user = null
      this.email = null
      this.password = null
     
-     if(response.)
+    
       
     }
   }
