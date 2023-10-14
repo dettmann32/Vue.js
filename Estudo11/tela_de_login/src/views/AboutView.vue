@@ -19,6 +19,8 @@
           </button>
         </div>
 
+        <p>{{mensage}}</p>
+
 
       </form>
     </div>
@@ -36,6 +38,7 @@ export default {
       user:null,
       email:null,
       password:null,
+      mensage:''
      
 
     }
@@ -45,11 +48,18 @@ export default {
       
       
       
-     await axios.post('http://localhost:3333/user/user',{
+     const ajax = await axios.post('http://localhost:3333/user/user',{
       user:this.user,
       email:this.email,
       password:this.password
+     }).then(response =>{
+      const data = response.data
+      cosole.log(data)
+      
+      this.mensage = data
      })
+
+
      this.user = null
      this.email = null
      this.password = null
@@ -57,11 +67,17 @@ export default {
      this.$refs.form.reset();
 
 
+     }}
+
+
+
+     
+
 
      
     }
-  }
-}
+  
+
 </script>
 
 <style scoped>

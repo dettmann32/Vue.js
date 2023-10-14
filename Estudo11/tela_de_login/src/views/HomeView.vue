@@ -19,6 +19,8 @@
           </button>
         </div>
 
+        <p>{{message}}</p>
+
 
       </form>
     </div>
@@ -37,33 +39,41 @@ export default {
       user:null,
       email:null,
       password:null,
+      message: ""
       
 
     }
   },
   methods:{
     async created(){
-      const response = await axios.post('http://localhost:3333/user/login',{
-      user:this.user,
-      email:this.email,
-      password:this.password
-     }).then(response =>{
-      
-      console.log(response.data)
-      return response
-     }).then(finalResponse =>{
-      console.log(finalResponse.data)
-     }).catch(console.log("deu ruim"))
 
-     this.user = null
-     this.email = null
-     this.password = null
-    
-    
-      
+    try {
+    const response = await axios.post('http://localhost:3333/user/login', {
+      user: this.user,
+      email: this.email,
+      password: this.password
+    });
+    console.log(response)
+
+    if(response.data.usuario.user){
+      this.$router.push('/logado')
+    }else{
+      this.message = "Nome ou senha invalidos"
     }
+
+    
+  } catch (err) {
+    console.error("Algo deu errado: " + err); // Corrigido a mensagem de erro aqui
+    
   }
+
+  this.user = null;
+  this.email = null;
+  this.password = null;
 }
+}
+}
+
 </script>
 
 <style>
