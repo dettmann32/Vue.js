@@ -19,7 +19,7 @@
           </button>
         </div>
 
-        <p>{{mensage}}</p>
+        <p>{{message}}</p>
 
 
       </form>
@@ -38,7 +38,7 @@ export default {
       user:null,
       email:null,
       password:null,
-      mensage:''
+      message:''
      
 
     }
@@ -52,19 +52,17 @@ export default {
       user:this.user,
       email:this.email,
       password:this.password
-     }).then(response =>{
-      const data = response.data
-      cosole.log(data)
-      
-      this.mensage = data
      })
+      
+      this.message = ajax.data.message
+    
 
 
      this.user = null
      this.email = null
      this.password = null
 
-     this.$refs.form.reset();
+     
 
 
      }}

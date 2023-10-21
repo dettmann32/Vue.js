@@ -19,7 +19,7 @@
           </button>
         </div>
 
-        <p>{{message}}</p>
+        <div>{{message}}</div>
 
 
       </form>
@@ -29,6 +29,7 @@
 
 <script>
 import axios from 'axios'
+const auth = require('../router/autenticação')
 
 
 export default {
@@ -39,7 +40,8 @@ export default {
       user:null,
       email:null,
       password:null,
-      message: ""
+      message: '',
+      
       
 
     }
@@ -53,16 +55,22 @@ export default {
       email: this.email,
       password: this.password
     });
-    console.log(response)
-
-    if(response.data.usuario.user){
-      this.$router.push('/logado')
-    }else{
-      this.message = "Nome ou senha invalidos"
-    }
 
     
+
+    this.message = response.data.message
+    
+    await auth.setAuth(response.data.user) 
+    
+
+    if(response.data.user){
+      this.$router.push('/logado')
+    }
+    
+   
+    
   } catch (err) {
+  
     console.error("Algo deu errado: " + err); // Corrigido a mensagem de erro aqui
     
   }
